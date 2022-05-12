@@ -21,4 +21,38 @@
         WHERE id = #{id} and email = #{email}
     </select>
 
+    <!-- 아이디중복 체크 -->
+    <select id="idCheck" parameterType="String" resultType="int">
+        SELECT COUNT(id) FROM USER WHERE id= #{id}
+    </select>
+
+    <!-- 이메일 인증 -->
+    <select id="insertMA" parameterType="map" resultType="int">
+        INSERT INTO mail_auth
+            (mail, auth_key, is_auth)
+        VALUES
+            (#{mail}, #{authKey}, 0)
+    </select>
+
+    <select id="mailAuthN" parameterType="String" resultType="int">
+        SELECT count(auth_key)
+        FROM mail_auth
+        WHERE auth_key = #{number};
+    </select>
+
+    <select id="mailAuth" parameterType="String" resultType="String">
+        SELECT auth_key FROM mail_auth WHERE mail = #{mail}
+    </select>
+
+    <select id="delete_AuthMail" parameterType="String" resultType="int">
+        DELETE from mail_auth WHERE mail = #{mail};
+    </select>
+
+    <select id="plus" parameterType="map" resultType="int">
+        update mail_auth set is_auth = 1 where mail = #{mail} and auth_key = #{Auth_Key}
+    </select>
+
+    <select id="Cnt" parameterType="String" resultType="int">
+        select is_auth from mail_auth where mail = #{mail};
+    </select>
 </mapper>

@@ -26,5 +26,33 @@ public class UserServiceImpl implements UserService {
         return userDao.look(id, email);
     }
 
+    @Override
+    public int idCheck(String id)throws Exception{
+        return userDao.idCheck(id);
+    }
 
+    @Override
+    public int insertMA(String mail, String authKey)throws Exception{
+        return userDao.insertMA(mail, authKey);
+    }
+
+    @Override
+    public String mailAuth(String mail) throws Exception{
+        return userDao.mailAuth(mail);
+    }
+
+    @Override
+    public int delete_AuthMail(String mail)throws Exception{
+        return userDao.delete_AuthMail(mail);
+    }
+
+    @Override
+    public int plus(String mail, String Auth_Key) throws Exception{
+        return userDao.plus(mail, Auth_Key);
+    }
+
+    @Override
+    public int Cnt(String mail)throws Exception{
+        return userDao.Cnt(mail);
+    }
 }
