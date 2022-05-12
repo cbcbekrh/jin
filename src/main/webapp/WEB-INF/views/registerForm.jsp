@@ -61,6 +61,10 @@
     </style>
     <title>Register</title>
 </head>
+<script>
+    let msg1 = "${msg1}"
+    if(msg1=="Id_ERR") alert("이미 존재하는 아이디 입니다.");
+</script>
 <body>
 <form:form modelAttribute="userDto">
     <div class="title">회원가입</div>
@@ -71,7 +75,7 @@
     <label for="">ID</label>
     <input class="input-field" type="text" name="id" placeholder="4~12자리의 영대소문자와 숫자 조합">
     <label for="">Password</label>
-    <input class="input-field" type="text" name="pwd" placeholder="4~12자리의 영대소문자와 숫자 조합">
+    <input class="input-field" type="password" name="pwd" placeholder="4~12자리의 영대소문자와 숫자 조합">
     <label for="">Name</label>
     <input class="input-field" type="text" name="name" placeholder="홍길동">
     <label for="">E-mail</label>

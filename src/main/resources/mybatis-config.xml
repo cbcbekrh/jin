@@ -6,6 +6,7 @@
     <typeAliases>
         <typeAlias alias="UserDto" type="com.myspring.jin.domain.UserDto"/>
         <typeAlias alias="BoardDto" type="com.myspring.jin.domain.BoardDto"/>
+        <typeAlias alias="CommentDto" type="com.myspring.jin.domain.CommentDto"/>
         <typeAlias alias="SearchCondition" type="com.myspring.jin.domain.SearchCondition"/>
     </typeAliases>
 </configuration>

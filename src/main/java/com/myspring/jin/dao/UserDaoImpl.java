@@ -31,4 +31,6 @@ public class UserDaoImpl implements UserDao {
         map.put("email", email);
         return session.selectOne(namespace+"look", map);
     }
+
+
 }

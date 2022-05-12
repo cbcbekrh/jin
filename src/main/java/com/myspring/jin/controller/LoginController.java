@@ -3,6 +3,7 @@ package com.myspring.jin.controller;
 import com.myspring.jin.domain.UserDto;
 import com.myspring.jin.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.LifecycleProcessor;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -41,7 +42,6 @@ public class LoginController {
         if(!loginCheck(id, pwd)) {
             // 2-1   일치하지 않으면, loginForm으로 이동
             String msg = URLEncoder.encode("id 또는 pwd가 일치하지 않습니다.", "UTF-8");
-
             return "redirect:/login/login?msg="+msg;
         }
 
