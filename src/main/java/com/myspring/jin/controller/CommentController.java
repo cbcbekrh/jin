@@ -1,8 +1,7 @@
 package com.myspring.jin.controller;
 
-import com.myspring.jin.dao.CommentDao;
+
 import com.myspring.jin.domain.CommentDto;
-import com.myspring.jin.domain.MailAuthVO;
 import com.myspring.jin.service.CommentService;
 import com.myspring.jin.service.MailSendService;
 import com.myspring.jin.service.UserService;
@@ -17,6 +16,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.util.List;
 import java.util.Map;
+
 
 @Controller
 public class CommentController {
@@ -86,7 +86,6 @@ public class CommentController {
             int Cnt = userService.idCheck(id);
             return Cnt;
     }
-
 
     @GetMapping("/comments") // /comments?bno=1080 GET
     @ResponseBody public ResponseEntity<List<CommentDto>> list(Integer bno){
